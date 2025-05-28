@@ -15,7 +15,26 @@ app.use(apodRateLimiter);
 
 app.use("/apod-proxy", proxyRoute);
 
-
+app.get("/", (req, res) => {
+  res.send(`
+    <html>
+      <head><title>APOD Discord Embed Proxy</title></head>
+      <body style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 2rem;">
+        <h1>Welcome to APOD Discord Embed Proxy 🚀</h1>
+        <p>Discord often fails to embed NASA's APOD images correctly due to missing headers or caching restrictions.</p>
+        <p>This proxy fetches APOD images and serves them with proper headers so Discord (and other clients) embed them perfectly.</p>
+        <p>To use the proxy, append the APOD image URL as a <code>?url=</code> query param to <a href="/apod-proxy">/apod-proxy</a>.</p>
+        <p>Example:</p>
+        <pre>/apod-proxy?url=https://apod.nasa.gov/apod/image/2505/Pluto-Mountains-Plains9-17-15.jpg</pre>
+        <p><a href="/apod-proxy">Go to APOD Proxy</a></p>
+        <hr />
+        <small style="color: gray; font-size: 0.8rem;">
+          Disclaimer: All rights to the images and content belong to NASA. This project simply provides a workaround for Discord embedding issues faced by astronomy developers using NASA APOD data. No ownership or copyright claims are made.
+        </small>
+      </body>
+    </html>
+  `);
+});
 
 app.listen(PORT, () => {
   console.log("\n╔" + "═".repeat(53) + "╗");
