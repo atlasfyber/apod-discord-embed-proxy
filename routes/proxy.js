@@ -24,6 +24,16 @@ router.get("/", apodRateLimiter, async (req, res) => {
     `);
   }
 
+  const apodRegex =
+    /^https:\/\/apod\.nasa\.gov\/apod\/image\/\d{4}\/.+\.(jpg|jpeg|png)$/i;
+  if (!apodRegex.test(imageUrl)) {
+    return res
+      .status(400)
+      .send(
+        "Invalid APOD image URL. Example: /apod-proxy?url=https://apod.nasa.gov/apod/image/2505/Pluto-Mountains-Plains9-17-15.jpg",
+      );
+  }
+
   try {
     const response = await fetch(imageUrl, {
       headers: {
