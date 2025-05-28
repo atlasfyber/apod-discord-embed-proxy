@@ -1,19 +1,17 @@
-```
-╔═════════════════════════════════════════════════════╗
-║                                                     ║
-║    🚀  APOD Discord Embed Proxy                     ║
-║    🌐  Running at: http://localhost:3000            ║
-║    ✅  Ready to serve APOD embeds to Discord        ║
-║                                                     ║
-╚═════════════════════════════════════════════════════╝
-```
+```js 
+                         
+   __    ____  _____  ____     ____  ____  _____  _  _  _  _ 
+  /__\  (  _ \(  _  )(  _ \   (  _ \(  _ \(  _  )( \/ )( \/ )
+ /(__)\  )___/ )(_)(  )(_) )   )___/ )   / )(_)(  )  (  \  / 
+(__)(__)(__)  (_____)(____/   (__)  (_)\_)(_____)(_/\_) (__) 
+                            
+``` 
 
-# APOD Discord Embed Proxy
-![npm version](https://img.shields.io/npm/v/express)
+# 🚀 NASA APOD Discord Embed Proxy
 ![issues](https://img.shields.io/github/issues/atlasfyber/apod-discord-embed-proxy)
 
 
-Discord has recently stopped reliably embedding direct image links from **[NASA’s Astronomy Picture of the Day (APOD)](https://apod.nasa.gov/apod/astropix.html)** site. This is likely due to the way NASA serves these images, missing certain headers like `Content-Type`, `Cache-Control`, or restrictive caching rules that prevent Discord’s link preview system from recognizing the image properly. 
+Discord has recently stopped reliably embedding direct image links from **[NASA’s Astronomy Picture of the Day (APOD)](https://apod.nasa.gov/apod/astropix.html)** site. This is likely due to the way NASA serves these images, or Discord issues.
 
 This simple code fixes that by fetching APOD images and serving them through your own URL, making Discord happy to embed the images every time.
 
@@ -70,9 +68,7 @@ curl "http://localhost:3000/apod-proxy?url=https://apod.nasa.gov/apod/image/2505
 
 Your proxy will fetch the image and serve it with all the right headers so Discord happily embeds it.
 
----
-
-## 🏗️ Project Structure
+### 🏗️ Project Structure
 
 Here's a quick look under the hood:
 
